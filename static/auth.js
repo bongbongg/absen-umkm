@@ -9,6 +9,33 @@
   var form = document.getElementById('loginForm');
   var alertBox = document.getElementById('loginAlert');
 
+  /* Mode Lo-Fi juga tersedia di halaman login. */
+  var lofi = false;
+  try {
+    lofi = window.localStorage.getItem('lofi') === '1';
+  } catch (err) {
+    lofi = false;
+  }
+  if (lofi) {
+    document.body.classList.add('wireframe');
+    var wfCss = document.createElement('link');
+    wfCss.rel = 'stylesheet';
+    wfCss.href = 'public/assets/css/wireframe.css';
+    document.head.appendChild(wfCss);
+  }
+  var lofiToggle = document.getElementById('lofiToggleLogin');
+  if (lofiToggle) {
+    lofiToggle.textContent = 'Lo-Fi: ' + (lofi ? 'ON' : 'OFF');
+    lofiToggle.addEventListener('click', function () {
+      try {
+        window.localStorage.setItem('lofi', lofi ? '0' : '1');
+      } catch (err) {
+        /* Abaikan. */
+      }
+      window.location.reload();
+    });
+  }
+
   if (!form) {
     return;
   }
