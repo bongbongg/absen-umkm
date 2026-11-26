@@ -1,0 +1,555 @@
+/* =============================================================
+   Lo-Fi Wireframe mode — monokrom, sketsa, tanpa dekorasi.
+   Dimuat hanya saat body memiliki class `.wireframe`.
+   Tidak mengubah logika aplikasi.
+   ============================================================= */
+
+body.wireframe {
+  --wf-ink: #111111;
+  --wf-mid: #666666;
+  --wf-soft: #e8e8e8;
+  --wf-paper: #ffffff;
+  --wf-font: ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
+
+  background: var(--wf-paper) !important;
+  color: var(--wf-ink) !important;
+  font-family: var(--wf-font) !important;
+}
+
+body.wireframe *,
+body.wireframe *::before,
+body.wireframe *::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+body.wireframe a {
+  color: var(--wf-ink) !important;
+  text-decoration: underline;
+}
+
+body.wireframe h1,
+body.wireframe h2,
+body.wireframe h3,
+body.wireframe h4 {
+  font-family: var(--wf-font) !important;
+  letter-spacing: -0.02em;
+}
+
+/* ------------------- permukaan & struktur ------------------- */
+
+body.wireframe .app {
+  background: var(--wf-paper) !important;
+}
+
+body.wireframe .sidebar,
+body.wireframe .card,
+body.wireframe .topbar,
+body.wireframe .filters,
+body.wireframe .form,
+body.wireframe .alert,
+body.wireframe .table-wrap,
+body.wireframe .stat,
+body.wireframe .auth__card,
+body.wireframe .wf-screen {
+  background: var(--wf-paper) !important;
+  border: 1px solid var(--wf-ink) !important;
+  border-radius: 0 !important;
+}
+
+body.wireframe .sidebar {
+  border-right: 2px solid var(--wf-ink) !important;
+  background-image: repeating-linear-gradient(0deg, transparent 0 23px, #f4f4f4 23px 24px) !important;
+}
+
+body.wireframe .topbar {
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-top: 0 !important;
+}
+
+body.wireframe .sidebar__brand-mark,
+body.wireframe .user-chip__avatar {
+  background: var(--wf-paper) !important;
+  border: 1px solid var(--wf-ink) !important;
+  border-radius: 0 !important;
+  color: var(--wf-ink) !important;
+  font-family: var(--wf-font) !important;
+}
+
+body.wireframe .nav__section {
+  color: var(--wf-mid) !important;
+  font-family: var(--wf-font) !important;
+  letter-spacing: 0.1em;
+}
+
+body.wireframe .nav__link {
+  background: var(--wf-paper) !important;
+  border: 1px dashed var(--wf-mid) !important;
+  border-radius: 0 !important;
+  color: var(--wf-ink) !important;
+}
+
+body.wireframe .nav__link.is-active {
+  background: var(--wf-ink) !important;
+  border-style: solid !important;
+  color: var(--wf-paper) !important;
+}
+
+body.wireframe .divider {
+  border-top: 1px dashed var(--wf-mid) !important;
+}
+
+body.wireframe .footer {
+  border-top: 1px solid var(--wf-ink) !important;
+  color: var(--wf-mid) !important;
+}
+
+/* -------------------------- kontrol -------------------------- */
+
+body.wireframe .btn {
+  background: var(--wf-paper) !important;
+  border: 1px solid var(--wf-ink) !important;
+  border-radius: 0 !important;
+  color: var(--wf-ink) !important;
+  font-family: var(--wf-font) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+body.wireframe .btn--primary {
+  background: var(--wf-ink) !important;
+  color: var(--wf-paper) !important;
+}
+
+body.wireframe .btn--danger {
+  border-style: dashed !important;
+}
+
+body.wireframe .btn--ghost {
+  border-style: dotted !important;
+}
+
+body.wireframe .input,
+body.wireframe .select,
+body.wireframe .textarea {
+  background: var(--wf-paper) !important;
+  border: 1px solid var(--wf-ink) !important;
+  border-radius: 0 !important;
+  color: var(--wf-ink) !important;
+  font-family: var(--wf-font) !important;
+}
+
+body.wireframe .field__label,
+body.wireframe .field__hint,
+body.wireframe .field__error {
+  font-family: var(--wf-font) !important;
+}
+
+body.wireframe .checkbox input,
+body.wireframe input[type="range"] {
+  accent-color: #111111;
+}
+
+/* -------------------------- badge --------------------------- */
+
+body.wireframe .badge {
+  background: var(--wf-paper) !important;
+  border: 1px solid var(--wf-mid) !important;
+  border-radius: 0 !important;
+  color: var(--wf-ink) !important;
+  font-family: var(--wf-font) !important;
+  font-size: 10px !important;
+  text-transform: uppercase;
+}
+
+body.wireframe .badge--success { border-style: solid !important; }
+body.wireframe .badge--warning { border-style: dashed !important; }
+body.wireframe .badge--danger { border-width: 2px !important; }
+body.wireframe .badge--primary,
+body.wireframe .badge--info { background: var(--wf-ink) !important; color: var(--wf-paper) !important; }
+
+/* -------------------------- data ---------------------------- */
+
+body.wireframe .stat {
+  border: 1px dashed var(--wf-mid) !important;
+}
+
+body.wireframe .stat__value {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+body.wireframe .stat__hint,
+body.wireframe .stat__label,
+body.wireframe .muted,
+body.wireframe .small {
+  color: var(--wf-mid) !important;
+}
+
+body.wireframe .table th {
+  background: var(--wf-ink) !important;
+  border: 1px solid var(--wf-ink) !important;
+  color: var(--wf-paper) !important;
+  font-family: var(--wf-font) !important;
+  text-transform: uppercase;
+}
+
+body.wireframe .table td {
+  border: 1px solid #999999 !important;
+}
+
+body.wireframe .table tbody tr:hover {
+  background: #f6f6f6 !important;
+}
+
+body.wireframe .progress {
+  background: var(--wf-paper) !important;
+  border: 1px solid var(--wf-ink) !important;
+  border-radius: 0 !important;
+}
+
+body.wireframe .progress__bar {
+  background: repeating-linear-gradient(45deg, #111 0 6px, #ffffff 6px 10px) !important;
+  border-right: 1px solid var(--wf-ink);
+  border-radius: 0 !important;
+}
+
+body.wireframe .alert {
+  border-style: dashed !important;
+  color: var(--wf-ink) !important;
+}
+
+body.wireframe .timeline__item {
+  border-left: 2px solid var(--wf-ink) !important;
+}
+
+body.wireframe .empty {
+  border: 1px dashed var(--wf-mid);
+}
+
+body.wireframe .kv__item {
+  border-bottom: 1px dotted var(--wf-mid);
+}
+
+/* ---------------- placeholder & label wireframe -------------- */
+
+.wf-tag {
+  display: inline-block;
+  padding: 1px 5px;
+  border: 1px solid #111111;
+  background: #ffffff;
+  color: #111111;
+  font: 10px/16px ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.wf-tag--filled {
+  background: #111111;
+  color: #ffffff;
+}
+
+body.wireframe [data-fr] {
+  position: relative;
+}
+
+body.wireframe [data-fr]::before {
+  content: attr(data-fr);
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  z-index: 4;
+  padding: 2px 8px;
+  border: 1px solid #111111;
+  border-radius: 0;
+  background: #ffffff;
+  color: #111111;
+  font: 700 10px/16px ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: none;
+}
+
+/* Halaman preview statis sudah punya label FR eksplisit di header tiap layar
+   dan di legenda. Matikan label otomatis supaya tidak bertumpuk dengan judul. */
+.wf-sheet [data-fr]::before {
+  content: none !important;
+}
+
+.wf-sheet [data-fr] {
+  position: static;
+}
+
+/* Beri ruang pada konten aplikasi Lo-Fi agar label FR tidak menimpa teks. */
+body.wireframe .card[data-fr] > .card__header,
+body.wireframe .stats[data-fr] {
+  padding-right: 92px;
+}
+
+.wf-placeholder,
+body.wireframe .wf-photo,
+body.wireframe .wf-chart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+  border: 1px dashed #444444 !important;
+  background: repeating-linear-gradient(135deg, #ffffff 0 9px, #ededed 9px 11px) !important;
+  color: #333333 !important;
+  font: 11px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace !important;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+body.wireframe .wf-photo {
+  min-height: 110px;
+}
+
+body.wireframe .wf-photo::after {
+  content: "[ FOTO / BUKTI KERJA ]";
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  padding: 1px 4px;
+  border: 1px solid #444444;
+  background: #ffffff;
+  font-size: 9px;
+}
+
+body.wireframe .wf-chart {
+  min-height: 170px;
+}
+
+body.wireframe .wf-chart::after {
+  content: "[ GRAFIK / VISUALISASI DATA ]";
+  padding: 3px 6px;
+  border: 1px solid #444444;
+  background: #ffffff;
+  font-size: 10px;
+}
+
+body.wireframe .wf-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #111111;
+  background: repeating-linear-gradient(45deg, #ffffff 0 5px, #dedede 5px 7px);
+  font: 9px ui-monospace, monospace;
+}
+
+body.wireframe .wf-toggle {
+  border: 1px solid #111111 !important;
+  border-radius: 0 !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+  font: 10px ui-monospace, monospace !important;
+  letter-spacing: 0.06em;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  padding: 6px 9px !important;
+}
+
+body.wireframe .wf-toggle--off {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+/* Popup konfirmasi ikut gaya sketsa monokrom. */
+body.wireframe .app-modal__backdrop {
+  background: rgba(17, 17, 17, 0.55) !important;
+  backdrop-filter: none !important;
+}
+
+body.wireframe .app-modal__card {
+  border: 1px solid #111111 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+  font-family: var(--wf-font) !important;
+}
+
+body.wireframe .app-modal__icon {
+  border: 1px solid #111111 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+  font-family: var(--wf-font) !important;
+}
+
+body.wireframe .app-modal__title,
+body.wireframe .app-modal__text {
+  font-family: var(--wf-font) !important;
+}
+
+/* ------------------ halaman preview statis ------------------- */
+
+.wf-sheet {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 18px 60px;
+}
+
+.wf-sheet__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #111111;
+  margin-bottom: 28px;
+}
+
+.wf-sheet__title {
+  margin: 0;
+  font: 700 22px/1.2 ui-monospace, monospace;
+  letter-spacing: -0.03em;
+}
+
+.wf-sheet__meta {
+  font: 11px/1.5 ui-monospace, monospace;
+  color: #555555;
+}
+
+.wf-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 30px;
+}
+
+.wf-screen {
+  margin-bottom: 46px;
+}
+
+.wf-screen__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #111111;
+  background: #111111;
+  color: #ffffff;
+  font: 700 11px/1.4 ui-monospace, monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.wf-screen__head .wf-tag {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #111111;
+}
+
+.wf-screen__body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  padding: 18px;
+}
+
+.wf-screen__body--wide {
+  grid-template-columns: 1fr;
+}
+
+.wf-block {
+  border: 1px dashed #777777;
+  padding: 15px;
+  min-width: 0;
+}
+
+.wf-block__title {
+  margin: 0 0 10px;
+  font: 700 11px/1.4 ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.wf-line {
+  height: 9px;
+  margin: 7px 0;
+  border: 1px solid #bbbbbb;
+  background: #f2f2f2;
+}
+
+.wf-line--short { width: 55%; }
+.wf-line--mid { width: 75%; }
+
+.wf-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dotted #999999;
+  font: 10px ui-monospace, monospace;
+}
+
+.wf-row:last-child { border-bottom: 0; }
+
+.wf-btn {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid #111111;
+  background: #ffffff;
+  color: #111111;
+  font: 10px ui-monospace, monospace;
+  text-transform: uppercase;
+}
+
+.wf-btn--filled { background: #111111; color: #ffffff; }
+.wf-btn--dashed { border-style: dashed; }
+
+.wf-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid #111111;
+}
+
+.wf-stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 8px;
+}
+
+.wf-stat {
+  border: 1px solid #111111;
+  padding: 8px;
+  font: 10px ui-monospace, monospace;
+}
+
+.wf-stat strong {
+  display: block;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.wf-note {
+  font: 11px/1.6 ui-monospace, monospace;
+  color: #555555;
+}
+
+@media (max-width: 900px) {
+  .wf-sheet { padding: 18px 12px 44px; }
+  .wf-screen { margin-bottom: 36px; }
+  .wf-screen__body { padding: 14px; }
+}
+
+@media (max-width: 480px) {
+  .wf-sheet__title { font-size: 18px; }
+  .wf-screen { margin-bottom: 32px; }
+  .wf-screen__body { grid-template-columns: 1fr; gap: 14px; padding: 12px; }
+  .wf-stat-row { grid-template-columns: repeat(2, 1fr); }
+  .wf-nav { gap: 5px; }
+}

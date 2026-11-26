@@ -1,0 +1,14 @@
+# Kredensial asli jangan pernah masuk ke repository
+.env
+
+# File hasil upload pengguna
+/uploads/evidence/*
+!/uploads/evidence/.gitkeep
+
+# Session & log lokal
+/storage/
+*.log
+
+# File sistem
+.DS_Store
+Thumbs.db

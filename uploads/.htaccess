@@ -1,0 +1,6 @@
+# Larangan eksekusi script di folder upload
+Options -Indexes
+php_flag engine off
+<FilesMatch "\.(php|phtml|php3|php5|php7|phar|pl|py|cgi|asp|aspx)$">
+    Require all denied
+</FilesMatch>
