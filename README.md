@@ -10,8 +10,8 @@ Selain versi PHP, tersedia juga versi **HTML statis** di folder yang sama. Cocok
 - Akun demo (kata sandi semua: `password123`):
   - Owner: `owner@umkm.local`
   - Karyawan: `siti@umkm.local`
-- Halaman: `dashboard.html`, `employees.html`, `schedules.html`, `attendance.html`, `corrections.html`, `tasks.html`, `reports.html`, `wireframe.html`.
-- Data di halaman-halaman ini **hanya contoh**. Tombol aksi menampilkan notifikasi sukses sebagai simulasi, tetapi tidak mengubah data. Login disimpan di `sessionStorage` browser.
+- Halaman: `dashboard.html`, `employees.html`, `schedules.html`, `attendance.html`, `history.html`, `corrections.html`, `tasks.html`, `task.html`, `reports.html`, `wireframe.html`.
+- Tombol, filter, formulir, dan popup konfirmasi mengikuti tampilan versi PHP. Data di halaman-halaman ini **hanya contoh**: aksi menampilkan notifikasi sukses, tetapi tidak menyimpan atau mengubah data. Login disimpan di `sessionStorage` browser.
 
 ## Struktur folder
 
