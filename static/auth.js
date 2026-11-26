@@ -16,24 +16,44 @@
   } catch (err) {
     lofi = false;
   }
+  function setLofi(on) {
+    try {
+      window.localStorage.setItem('lofi', on ? '1' : '0');
+    } catch (err) {
+      /* Abaikan. */
+    }
+    window.location.reload();
+  }
+
   if (lofi) {
     document.body.classList.add('wireframe');
     var wfCss = document.createElement('link');
     wfCss.rel = 'stylesheet';
     wfCss.href = 'public/assets/css/wireframe.css';
     document.head.appendChild(wfCss);
-  }
-  var lofiToggle = document.getElementById('lofiToggleLogin');
-  if (lofiToggle) {
-    lofiToggle.textContent = 'Lo-Fi: ' + (lofi ? 'ON' : 'OFF');
-    lofiToggle.addEventListener('click', function () {
-      try {
-        window.localStorage.setItem('lofi', lofi ? '0' : '1');
-      } catch (err) {
-        /* Abaikan. */
-      }
-      window.location.reload();
-    });
+
+    /* Saat Lo-Fi aktif, tombol kontrol disembunyikan dan diganti keterangan. */
+    var controls = document.getElementById('loginControls');
+    if (controls) {
+      controls.hidden = true;
+      var note = document.createElement('div');
+      note.className = 'lofi-note';
+      note.innerHTML = '<span class="wf-tag wf-tag--filled">MODE LO-FI: ON</span>'
+        + '<span>klik untuk kembali ke tampilan biasa</span>';
+      note.title = 'Matikan mode Lo-Fi';
+      note.addEventListener('click', function () {
+        setLofi(false);
+      });
+      controls.parentNode.insertBefore(note, controls.nextSibling);
+    }
+  } else {
+    var lofiToggle = document.getElementById('lofiToggleLogin');
+    if (lofiToggle) {
+      lofiToggle.textContent = 'Lo-Fi: OFF';
+      lofiToggle.addEventListener('click', function () {
+        setLofi(true);
+      });
+    }
   }
 
   if (!form) {

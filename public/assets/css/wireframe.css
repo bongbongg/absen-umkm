@@ -361,6 +361,26 @@ body.wireframe .wf-toggle--off {
   color: #111111 !important;
 }
 
+/* Keterangan mode Lo-Fi di halaman login (menggantikan tombol kontrol). */
+.lofi-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  cursor: pointer;
+  color: #111111;
+  font: 10px/1.5 var(--wf-font);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lofi-note:hover .wf-tag {
+  background: #ffffff;
+  color: #111111;
+}
+
 /* Popup konfirmasi ikut gaya sketsa monokrom. */
 body.wireframe .app-modal__backdrop {
   background: rgba(17, 17, 17, 0.55) !important;

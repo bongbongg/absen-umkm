@@ -1302,6 +1302,11 @@ button {
   }
 }
 
+/* Atribut hidden harus menang atas aturan layout seperti .row/.app-modal. */
+[hidden] {
+  display: none !important;
+}
+
 /* -------------------------- notifikasi demo ----------------------- */
 
 .demo-toast {
