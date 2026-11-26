@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Demo statis Monitoring Absensi UMKM (tanpa database)">
+    <title>Monitoring Absensi UMKM · Demo</title>
+    <link rel="stylesheet" href="public/assets/css/app.css">
+</head>
+<body class="auth-page">
+<main class="auth">
+    <div class="auth__card">
+        <div class="auth__brand">
+            <span class="sidebar__brand-mark">UM</span>
+            <span>Monitoring Absensi UMKM</span>
+        </div>
+        <h1 class="auth__title">Masuk ke sistem</h1>
+        <p class="auth__subtitle">Versi demo statis — berjalan di browser tanpa database.</p>
+
+        <div id="loginAlert"></div>
+
+        <form id="loginForm" class="form stack" autocomplete="off">
+            <div class="field">
+                <label class="field__label" for="email">Email / Username</label>
+                <input class="input" id="email" name="email" type="text" autocomplete="username"
+                       placeholder="owner@umkm.local" required autofocus>
+            </div>
+            <div class="field">
+                <label class="field__label" for="password">Kata sandi</label>
+                <input class="input" id="password" name="password" type="password"
+                       autocomplete="current-password" placeholder="••••••••••" required>
+            </div>
+            <button class="btn btn--primary" type="submit" style="width:100%">Masuk</button>
+        </form>
+
+        <div class="divider"></div>
+        <p class="auth__hint"><strong>Akun demo</strong> — kata sandi semua akun: <code>password123</code></p>
+        <div class="kv">
+            <div class="kv__item"><span class="kv__label">Owner</span><span class="kv__value">owner@umkm.local</span></div>
+            <div class="kv__item"><span class="kv__label">Karyawan</span><span class="kv__value">siti@umkm.local</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="row" style="justify-content:center;gap:8px;flex-wrap:wrap">
+            <a class="btn btn--ghost btn--sm" href="wireframe.html">Wireframe Preview</a>
+        </div>
+    </div>
+</main>
+<script src="static/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lo-Fi Wireframe Preview · Monitoring Absensi UMKM</title>
+    <link rel="stylesheet" href="public/assets/css/app.css">
+    <link rel="stylesheet" href="public/assets/css/wireframe.css">
+</head>
+<body class="wireframe">
+<div class="wf-sheet">
+    <div class="wf-sheet__head">
+        <div>
+            <div class="wf-tag wf-tag--filled">WIREFRAME / LO-FI</div>
+            <h1 class="wf-sheet__title">Monitoring Pekerjaan &amp; Absensi Karyawan UMKM</h1>
+            <div class="wf-sheet__meta">15 alur inti · palet monokrom · sketsa layout · responsif hingga 360 px · bukan desain final</div>
+        </div>
+        <div class="wf-nav" style="border:0;padding:0">
+            <a class="wf-btn" href="index.html">← Kembali ke aplikasi</a>
+            <a class="wf-btn wf-btn--filled" href="index.html" onclick="localStorage.setItem('lofi','1')">Buka aplikasi: Lo-Fi ON</a>
+        </div>
+    </div>
+
+    <div class="wf-legend" aria-label="Daftar kode fitur wireframe">
+                    <span class="wf-tag" title="Login Owner">FR-01 · Login Owner</span>
+                    <span class="wf-tag" title="Login Karyawan">FR-02 · Login Karyawan</span>
+                    <span class="wf-tag" title="Dashboard Owner">FR-03 · Dashboard Owner</span>
+                    <span class="wf-tag" title="Aktivitas &amp; Status Tugas">FR-04 · Aktivitas &amp; Status Tugas</span>
+                    <span class="wf-tag" title="Jadwal Kerja">FR-05 · Jadwal Kerja</span>
+                    <span class="wf-tag" title="Check-In / Check-Out">FR-06 · Check-In / Check-Out</span>
+                    <span class="wf-tag" title="Riwayat Absensi">FR-07 · Riwayat Absensi</span>
+                    <span class="wf-tag" title="Pengajuan Koreksi">FR-08 · Pengajuan Koreksi</span>
+                    <span class="wf-tag" title="Persetujuan Koreksi">FR-09 · Persetujuan Koreksi</span>
+                    <span class="wf-tag" title="Daftar Tugas">FR-10 · Daftar Tugas</span>
+                    <span class="wf-tag" title="Update Progres 0–100%">FR-11 · Update Progres 0–100%</span>
+                    <span class="wf-tag" title="Upload Bukti Kerja">FR-12 · Upload Bukti Kerja</span>
+                    <span class="wf-tag" title="Review &amp; Persetujuan">FR-13 · Review &amp; Persetujuan</span>
+                    <span class="wf-tag" title="Filter Laporan">FR-14 · Filter Laporan</span>
+                    <span class="wf-tag" title="Ekspor PDF / Excel">FR-15 · Ekspor PDF / Excel</span>
+            </div>
+
+    <p class="wf-note">
+        Konvensi: <span class="wf-tag">FR-xx</span> = kode alur fitur ·
+        kotak dashed = placeholder (grafik, foto/bukti, avatar) ·
+        kotak solid = elemen interaktif ·
+        arsiran = area gambar/statik. Mode Lo-Fi juga bisa dinyalakan di aplikasi asli lewat tombol <strong>Lo-Fi: ON/OFF</strong> di header.
+    </p>
+
+    <!-- ============================ LOGIN ============================ -->
+    <section class="wf-screen" data-fr="FR-01 / FR-02">
+        <div class="wf-screen__head">
+            <span>01 · Halaman Login — Owner &amp; Karyawan</span>
+            <span><span class="wf-tag">FR-01 Login Owner</span> <span class="wf-tag">FR-02 Login Karyawan</span></span>
+        </div>
+        <div class="wf-screen__body">
+                            <div class="wf-block" data-fr="FR-01">
+                    <h2 class="wf-block__title">LOGIN — OWNER</h2>
+                    <div class="row" style="gap:8px;margin-bottom:12px">
+                        <span class="wf-avatar">UM</span>
+                        <div>
+                            <div class="wf-line wf-line--mid"></div>
+                            <div class="wf-line wf-line--short"></div>
+                        </div>
+                    </div>
+                    <div class="wf-row"><span>EMAIL / USERNAME</span><span>[ input teks ]</span></div>
+                    <div class="wf-row"><span>KATA SANDI</span><span>[ input password ]</span></div>
+                    <div class="wf-row"><span>owner@umkm.test</span><span>Dashboard owner · metrik &amp;amp; laporan</span></div>
+                    <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">
+                        <span class="wf-btn wf-btn--filled">MASUK →</span>
+                        <span class="wf-btn wf-btn--dashed">Lupa sandi?</span>
+                    </div>
+                </div>
+                            <div class="wf-block" data-fr="FR-02">
+                    <h2 class="wf-block__title">LOGIN — KARYAWAN</h2>
+                    <div class="row" style="gap:8px;margin-bottom:12px">
+                        <span class="wf-avatar">UM</span>
+                        <div>
+                            <div class="wf-line wf-line--mid"></div>
+                            <div class="wf-line wf-line--short"></div>
+                        </div>
+                    </div>
+                    <div class="wf-row"><span>EMAIL / USERNAME</span><span>[ input teks ]</span></div>
+                    <div class="wf-row"><span>KATA SANDI</span><span>[ input password ]</span></div>
+                    <div class="wf-row"><span>budi@umkm.test</span><span>Absensi · tugas · koreksi</span></div>
+                    <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">
+                        <span class="wf-btn wf-btn--filled">MASUK →</span>
+                        <span class="wf-btn wf-btn--dashed">Lupa sandi?</span>
+                    </div>
+                </div>
+                    </div>
+    </section>
+
+    <!-- ========================= DASHBOARD ========================= -->
+    <section class="wf-screen" data-fr="FR-03 / FR-04">
+        <div class="wf-screen__head">
+            <span>02 · Dashboard Owner — Ringkasan &amp; Aktivitas</span>
+            <span><span class="wf-tag">FR-03 Ringkasan</span> <span class="wf-tag">FR-04 Aktivitas</span></span>
+        </div>
+        <div class="wf-screen__body wf-screen__body--wide">
+            <div class="wf-block" style="border-style:solid">
+                <div class="wf-nav">
+                    <span class="wf-btn wf-btn--filled">☰ MENU</span>
+                    <span class="wf-btn is-active">Dashboard</span>
+                    <span class="wf-btn">Karyawan</span>
+                    <span class="wf-btn">Jadwal</span>
+                    <span class="wf-btn">Absensi</span>
+                    <span class="wf-btn">Koreksi</span>
+                    <span class="wf-btn">Tugas</span>
+                    <span class="wf-btn">Laporan</span>
+                </div>
+                <div class="wf-row" style="border:0">
+                    <span>[ HEADER: judul halaman · pencarian · avatar pengguna · tombol Lo-Fi ]</span>
+                    <span class="wf-avatar">O</span>
+                </div>
+            </div>
+
+            <div class="wf-block" data-fr="FR-03">
+                <h2 class="wf-block__title">Kartu ringkasan hari ini</h2>
+                <div class="wf-stat-row">
+                                            <div class="wf-stat"><span>HADIR</span><strong>18</strong><span>[ angka metrik ]</span></div>
+                                            <div class="wf-stat"><span>TERLAMBAT</span><strong>3</strong><span>[ angka metrik ]</span></div>
+                                            <div class="wf-stat"><span>KOREKSI PENDING</span><strong>2</strong><span>[ angka metrik ]</span></div>
+                                            <div class="wf-stat"><span>TUGAS AKTIF</span><strong>7</strong><span>[ angka metrik ]</span></div>
+                                    </div>
+            </div>
+
+            <div class="wf-block wf-chart" data-fr="FR-03"></div>
+
+            <div class="wf-block" data-fr="FR-04">
+                <h2 class="wf-block__title">Aktivitas terbaru &amp; status tugas</h2>
+                                    <div class="wf-row"><span>08:12 · Budi Santoso check-in · Hadir</span><span class="wf-tag">badge: HADIR</span></div>
+                                    <div class="wf-row"><span>08:35 · Pengajuan koreksi menunggu · Siti</span><span class="wf-tag">badge: PENDING</span></div>
+                                    <div class="wf-row"><span>09:05 · Tugas «Rekap stok» progres 60%</span><span class="wf-tag">badge: BERJALAN</span></div>
+                                    <div class="wf-row"><span>10:20 · Bukti pekerjaan diunggah · Rizky</span><span class="wf-tag">badge: MENUNGGU</span></div>
+                            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABSENSI & RIWAYAT ==================== -->
+    <section class="wf-screen" data-fr="FR-05 / FR-06 / FR-07">
+        <div class="wf-screen__head">
+            <span>03 · Absensi — Jadwal, Check-In/Out, Riwayat</span>
+            <span><span class="wf-tag">FR-05 Jadwal</span> <span class="wf-tag">FR-06 Check-In/Out</span> <span class="wf-tag">FR-07 Riwayat</span></span>
+        </div>
+        <div class="wf-screen__body">
+            <div class="wf-block" data-fr="FR-06">
+                <h2 class="wf-block__title">Absensi karyawan — jadwal hari ini</h2>
+                <div class="wf-row"><span>26 Nov 2026 · 08:00–17:00</span><span class="wf-tag">HARI INI</span></div>
+                <div class="wf-row"><span>Check-in</span><span>[ 08:02 ] · otomatis</span></div>
+                <div class="wf-row"><span>Check-out</span><span>[ 17:05 ] · otomatis</span></div>
+                <div class="wf-row"><span>Status</span><span class="wf-tag">TERLAMBAT 2 MENIT</span></div>
+                <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">
+                    <span class="wf-btn wf-btn--filled">CHECK-IN</span>
+                    <span class="wf-btn">CHECK-OUT</span>
+                    <span class="wf-btn wf-btn--dashed">Ajukan koreksi</span>
+                </div>
+            </div>
+
+            <div class="wf-block" data-fr="FR-05">
+                <h2 class="wf-block__title">Jadwal kerja (owner)</h2>
+                <div class="wf-row"><span>[ avatar ] Budi · EMP-001</span><span>08:00–17:00</span></div>
+                <div class="wf-row"><span>[ avatar ] Siti · EMP-002</span><span>09:00–18:00</span></div>
+                <div class="wf-row"><span>[ avatar ] Rizky · EMP-003</span><span>08:00–16:00</span></div>
+                <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">
+                    <span class="wf-btn wf-btn--filled">+ TAMBAH JADWAL</span>
+                    <span class="wf-btn wf-btn--dashed">Filter tanggal</span>
+                </div>
+            </div>
+
+            <div class="wf-block wf-screen__body--wide" data-fr="FR-07" style="grid-column:1/-1">
+                <h2 class="wf-block__title">Riwayat absensi — tabel dengan filter</h2>
+                <div class="wf-nav" style="margin-bottom:10px">
+                    <span class="wf-btn">Dari: [ tanggal ]</span>
+                    <span class="wf-btn">Sampai: [ tanggal ]</span>
+                    <span class="wf-btn">Karyawan: [ pilih ]</span>
+                    <span class="wf-btn wf-btn--filled">TERAPKAN</span>
+                </div>
+                <div class="wf-row"><strong>TANGGAL</strong><strong>KARYAWAN</strong><strong>MASUK</strong><strong>PULANG</strong><strong>STATUS</strong></div>
+                                    <div class="wf-row">
+                        <span>26 Nov 2026</span><span>Budi</span><span>08:02</span><span>17:05</span><span>TERLAMBAT</span>                    </div>
+                                    <div class="wf-row">
+                        <span>25 Nov 2026</span><span>Siti</span><span>09:01</span><span>18:00</span><span>HADIR</span>                    </div>
+                                    <div class="wf-row">
+                        <span>24 Nov 2026</span><span>Budi</span><span>08:00</span><span>17:02</span><span>HADIR</span>                    </div>
+                            </div>
+        </div>
+    </section>
+
+    <!-- ========================== KOREKSI ========================== -->
+    <section class="wf-screen" data-fr="FR-08 / FR-09">
+        <div class="wf-screen__head">
+            <span>04 · Koreksi Absensi — Pengajuan &amp; Persetujuan</span>
+            <span><span class="wf-tag">FR-08 Pengajuan</span> <span class="wf-tag">FR-09 Persetujuan</span></span>
+        </div>
+        <div class="wf-screen__body">
+            <div class="wf-block" data-fr="FR-08">
+                <h2 class="wf-block__title">Form pengajuan (karyawan)</h2>
+                <div class="wf-row"><span>TANGGAL YANG DIKOREKSI</span><span>[ tanggal ]</span></div>
+                <div class="wf-row"><span>JAM MASUK DIAJUKAN</span><span>[ 08:00 ]</span></div>
+                <div class="wf-row"><span>JAM PULANG DIAJUKAN</span><span>[ 17:00 ]</span></div>
+                <div class="wf-row"><span>ALASAN</span><span>[ textarea ]</span></div>
+                <div class="wf-line wf-line--mid"></div>
+                <div class="wf-line wf-line--short"></div>
+                <div style="margin-top:12px"><span class="wf-btn wf-btn--filled">KIRIM PENGAJUAN</span></div>
+            </div>
+
+            <div class="wf-block" data-fr="FR-09">
+                <h2 class="wf-block__title">Review &amp; persetujuan (owner)</h2>
+                <div class="wf-row"><span>[ avatar ] Siti · 24 Nov</span><span class="wf-tag">PENDING</span></div>
+                <div class="wf-row"><span>Lama: 09:10 → Baru: 09:00</span><span>[ alasan ]</span></div>
+                <div class="wf-row"><span>Catatan review</span><span>[ input ]</span></div>
+                <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">
+                    <span class="wf-btn wf-btn--filled">SETUJUI</span>
+                    <span class="wf-btn wf-btn--dashed">TOLAK</span>
+                </div>
+                <p class="wf-note" style="margin-top:10px">Setelah disetujui → tabel <strong>attendances</strong> diperbarui (transaksi).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== TUGAS & PROGRES ====================== -->
+    <section class="wf-screen" data-fr="FR-10 / FR-11 / FR-12 / FR-13">
+        <div class="wf-screen__head">
+            <span>05 · Tugas &amp; Progres — Daftar, Update, Bukti, Review</span>
+            <span><span class="wf-tag">FR-10 Daftar</span> <span class="wf-tag">FR-11 Progres</span> <span class="wf-tag">FR-12 Bukti</span> <span class="wf-tag">FR-13 Review</span></span>
+        </div>
+        <div class="wf-screen__body">
+            <div class="wf-block" data-fr="FR-10">
+                <h2 class="wf-block__title">Daftar tugas (status &amp; progres)</h2>
+                <div class="wf-row"><strong>TUGAS</strong><strong>KARYAWAN</strong><strong>PROGRES</strong><strong>STATUS</strong></div>
+                                    <div class="wf-row">
+                        <span>Rekap penjualan</span><span>Budi</span><span>60%</span><span>BERJALAN</span>                    </div>
+                                    <div class="wf-row">
+                        <span>Input stok gudang</span><span>Rizky</span><span>100%</span><span>MENUNGGU</span>                    </div>
+                                    <div class="wf-row">
+                        <span>Foto display toko</span><span>Siti</span><span>0%</span><span>BELUM DIMULAI</span>                    </div>
+                                <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">
+                    <span class="wf-btn wf-btn--filled">+ BUAT TUGAS</span>
+                    <span class="wf-btn wf-btn--dashed">Filter status</span>
+                </div>
+            </div>
+
+            <div class="wf-block" data-fr="FR-11">
+                <h2 class="wf-block__title">Update progres 0–100% (karyawan)</h2>
+                <div class="wf-row"><span>PERSENTASE</span><span>[ 0 --------●-------- 100 ] = 60%</span></div>
+                <div class="wf-row"><span>STATUS</span><span>[ pilih: berjalan ]</span></div>
+                <div class="wf-row"><span>CATATAN</span><span>[ textarea ]</span></div>
+                <div style="margin-top:12px"><span class="wf-btn wf-btn--filled">SIMPAN PROGRES</span></div>
+                <p class="wf-note" style="margin-top:10px">Setiap perubahan masuk ke <strong>task_progress_logs</strong>.</p>
+            </div>
+
+            <div class="wf-block wf-photo" data-fr="FR-12">
+                <div style="position:absolute;top:8px;left:8px" class="wf-tag">FR-12 Upload bukti</div>
+            </div>
+
+            <div class="wf-block" data-fr="FR-12">
+                <h2 class="wf-block__title">Unggah bukti pekerjaan</h2>
+                <div class="wf-row"><span>FILE (JPG/PNG/PDF/DOC)</span><span>[ pilih berkas ]</span></div>
+                <div class="wf-row"><span>Ukuran maksimal</span><span>5 MB · MIME divalidasi</span></div>
+                <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">
+                    <span class="wf-btn">UNGGAH</span>
+                    <span class="wf-btn wf-btn--filled">AJUKAN SELESAI</span>
+                </div>
+            </div>
+
+            <div class="wf-block" data-fr="FR-13" style="grid-column:1/-1">
+                <h2 class="wf-block__title">Review &amp; persetujuan owner</h2>
+                <div class="wf-row"><span>[ avatar ] Rizky · bukti #2 terlampir</span><span class="wf-tag">MENUNGGU PERSETUJUAN</span></div>
+                <div class="wf-row"><span>Catatan revisi (jika ditolak)</span><span>[ textarea ]</span></div>
+                <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">
+                    <span class="wf-btn wf-btn--filled">✓ SETUJUI SELESAI</span>
+                    <span class="wf-btn wf-btn--dashed">↻ KEMBALIKAN UNTUK REVISI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================== LAPORAN =========================== -->
+    <section class="wf-screen" data-fr="FR-14 / FR-15">
+        <div class="wf-screen__head">
+            <span>06 · Laporan — Filter Periode &amp; Ekspor</span>
+            <span><span class="wf-tag">FR-14 Filter</span> <span class="wf-tag">FR-15 Ekspor</span></span>
+        </div>
+        <div class="wf-screen__body wf-screen__body--wide">
+            <div class="wf-block" data-fr="FR-14">
+                <h2 class="wf-block__title">Filter laporan</h2>
+                <div class="wf-nav">
+                    <span class="wf-btn wf-btn--filled">JENIS: [ absensi / tugas ]</span>
+                    <span class="wf-btn">DARI: [ tanggal ]</span>
+                    <span class="wf-btn">SAMPAI: [ tanggal ]</span>
+                    <span class="wf-btn">TAMPILKAN</span>
+                </div>
+            </div>
+
+            <div class="wf-block" data-fr="FR-15">
+                <h2 class="wf-block__title">Ekspor &amp; pratinjau data</h2>
+                <div class="wf-nav" style="margin-bottom:10px">
+                    <span class="wf-btn wf-btn--filled">↓ EKSPOR PDF</span>
+                    <span class="wf-btn">↓ EKSPOR EXCEL (CSV)</span>
+                </div>
+                <div class="wf-row"><strong>ID</strong><strong>TANGGAL</strong><strong>KARYAWAN</strong><strong>MASUK</strong><strong>PULANG</strong><strong>STATUS</strong></div>
+                                    <div class="wf-row">
+                        <span>#1</span><span>26 Nov 2026</span><span>Budi</span><span>08:02</span><span>17:05</span><span>TERLAMBAT</span>                    </div>
+                                    <div class="wf-row">
+                        <span>#2</span><span>25 Nov 2026</span><span>Siti</span><span>09:01</span><span>18:00</span><span>HADIR</span>                    </div>
+                            </div>
+        </div>
+    </section>
+
+    <div class="wf-note" style="border-top:2px solid #111;padding-top:12px">
+        Catatan: wireframe ini adalah dokumentasi visual statis. Tidak ada data yang diubah dan tidak ada query database yang dijalankan.
+        Untuk melihat sketsa pada halaman aplikasi asli, nyalakan <strong>Lo-Fi: ON</strong> di header (tersimpan di session selama browsing).
+    </div>
+</div>
+</body>
+</html>

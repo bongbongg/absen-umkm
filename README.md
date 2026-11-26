@@ -2,11 +2,25 @@
 
 Aplikasi web PHP + MySQL untuk memantau absensi, jadwal kerja, koreksi kehadiran, dan progres tugas karyawan UMKM. Antarmuka responsif untuk layar 360 px sampai desktop.
 
+## Demo statis (tanpa database / bisa di Netlify)
+
+Selain versi PHP, tersedia juga versi **HTML statis** di folder yang sama. Cocok untuk dipublish ke hosting statis seperti Netlify karena **tidak membutuhkan PHP/MySQL**.
+
+- Buka `index.html` (atau root domain di Netlify).
+- Akun demo (kata sandi semua: `password123`):
+  - Owner: `owner@umkm.local`
+  - Karyawan: `siti@umkm.local`
+- Halaman: `dashboard.html`, `employees.html`, `schedules.html`, `attendance.html`, `corrections.html`, `tasks.html`, `reports.html`, `wireframe.html`.
+- Data di halaman-halaman ini **hanya contoh** dan tombol aksi belum memproses data. Login disimpan di `sessionStorage` browser.
+
 ## Struktur folder
 
 ```
 absen/
-├── index.php               # Front controller (semua halaman via ?page=...)
+├── index.html              # Halaman login demo statis (Netlify)
+├── index.php               # Front controller versi PHP (semua halaman via ?page=...)
+├── *.html                  # Halaman demo statis lainnya (dashboard, jadwal, dll.)
+├── static/                 # auth.js & shell.js untuk demo statis
 ├── install.php             # Halaman pembuat tabel + data contoh (hapus setelah dipakai)
 ├── .env / .env.example     # Konfigurasi aplikasi & MySQL
 ├── config/
