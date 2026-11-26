@@ -11,7 +11,7 @@ Selain versi PHP, tersedia juga versi **HTML statis** di folder yang sama. Cocok
   - Owner: `owner@umkm.local`
   - Karyawan: `siti@umkm.local`
 - Halaman: `dashboard.html`, `employees.html`, `schedules.html`, `attendance.html`, `corrections.html`, `tasks.html`, `reports.html`, `wireframe.html`.
-- Data di halaman-halaman ini **hanya contoh** dan tombol aksi belum memproses data. Login disimpan di `sessionStorage` browser.
+- Data di halaman-halaman ini **hanya contoh**. Tombol aksi menampilkan notifikasi sukses sebagai simulasi, tetapi tidak mengubah data. Login disimpan di `sessionStorage` browser.
 
 ## Struktur folder
 

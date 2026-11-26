@@ -1302,6 +1302,30 @@ button {
   }
 }
 
+/* -------------------------- notifikasi demo ----------------------- */
+
+.demo-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1100;
+  width: min(360px, calc(100vw - 40px));
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.demo-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.demo-toast .alert {
+  margin: 0;
+  box-shadow: var(--shadow-lg);
+}
+
 /* -------------------------- popup konfirmasi ---------------------- */
 
 body.modal-open {

@@ -60,12 +60,6 @@
       + (action || '') + '</div>';
   }
 
-  function notice() {
-    return '<div class="alert alert--info" data-autodismiss="9000">'
-      + '<span>Ini <strong>versi demo statis</strong> — data hanya contoh, tidak tersambung ke database. '
-      + 'Tombol aksi belum memproses data.</span></div>';
-  }
-
   function card(title, body) {
     return '<div class="card"><div class="card__header"><div class="card__title">'
       + esc(title) + '</div></div><div class="card__body">' + body + '</div></div>';
@@ -148,7 +142,6 @@
 
   if (PAGE === 'dashboard' && owner) {
     content = header('Dashboard Owner', 'Ringkasan absensi dan progres tugas hari ini.')
-      + notice()
       + '<div class="stats">'
       + stat('Hadir', '18', 'success') + stat('Terlambat', '3', 'warning')
       + stat('Koreksi pending', '2', 'danger') + stat('Tugas aktif', '7', 'primary')
@@ -167,7 +160,6 @@
       ]));
   } else if (PAGE === 'dashboard') {
     content = header('Dashboard Karyawan', 'Halo ' + user.name + ', ini ringkasan aktivitas Anda.')
-      + notice()
       + '<div class="stats">'
       + stat('Hadir bulan ini', '22', 'success') + stat('Terlambat', '1', 'warning')
       + stat('Tugas aktif', '2', 'primary') + stat('Koreksi disetujui', '1', 'info')
@@ -182,7 +174,6 @@
       ]));
   } else if (PAGE === 'employees') {
     content = header('Data Karyawan', 'Kelola akun dan identitas karyawan UMKM.')
-      + notice()
       + card('Daftar karyawan', table(['ID', 'NAMA', 'EMAIL', 'JABATAN', 'STATUS'], [
         ['EMP-001', 'Budi Santoso', 'budi@umkm.local', 'Staf', badge('Aktif', 'success')],
         ['EMP-002', 'Siti Aminah', 'siti@umkm.local', 'Staf', badge('Aktif', 'success')],
@@ -190,7 +181,6 @@
       ]));
   } else if (PAGE === 'schedules') {
     content = header('Jadwal Kerja', owner ? 'Atur jadwal masuk dan pulang karyawan.' : 'Lihat jadwal kerja Anda.')
-      + notice()
       + card('Daftar jadwal', table(['TANGGAL', 'KARYAWAN', 'MASUK', 'PULANG'], owner ? [
         ['26 Nov 2026', 'Budi Santoso', '08:00', '17:00'],
         ['26 Nov 2026', 'Siti Aminah', '09:00', '18:00'],
@@ -202,7 +192,6 @@
   } else if (PAGE === 'attendance') {
     content = header(owner ? 'Absensi Hari Ini' : 'Absensi Saya',
       owner ? 'Pantau kehadiran karyawan.' : 'Catat kehadiran dan lihat riwayat Anda.')
-      + notice()
       + (owner ? '' : card('Absensi hari ini', '<div class="row" style="gap:8px;flex-wrap:wrap">'
         + '<button class="btn btn--primary btn--sm" type="button">Check-in</button>'
         + '<button class="btn btn--secondary btn--sm" type="button">Check-out</button>'
@@ -218,7 +207,6 @@
       ]));
   } else if (PAGE === 'corrections') {
     content = header('Koreksi Absensi', owner ? 'Setujui atau tolak pengajuan koreksi.' : 'Ajukan koreksi data absensi.')
-      + notice()
       + card(owner ? 'Pengajuan pending' : 'Pengajuan saya', table(
         ['TANGGAL', 'KARYAWAN', 'LAMA', 'DIAJUKAN', 'STATUS', 'AKSI'], owner ? [
           ['24 Nov 2026', 'Siti', '09:10', '09:00', badge('Pending', 'warning'),
@@ -232,7 +220,6 @@
   } else if (PAGE === 'tasks') {
     content = header(owner ? 'Daftar Tugas' : 'Tugas Saya',
       owner ? 'Pantau progres dan persetujuan tugas.' : 'Perbarui progres dan unggah bukti kerja.')
-      + notice()
       + card('Daftar tugas', table(['TUGAS', 'KARYAWAN', 'PROGRES', 'STATUS'], owner ? [
         ['Rekap penjualan', 'Budi', '60%', badge('Berjalan', 'primary')],
         ['Input stok gudang', 'Rizky', '100%', badge('Menunggu review', 'info')],
@@ -243,7 +230,6 @@
       ]));
   } else if (PAGE === 'reports') {
     content = header('Laporan & Ekspor', 'Filter periode lalu unduh laporan.')
-      + notice()
       + card('Filter laporan', '<div class="row" style="gap:10px;flex-wrap:wrap">'
         + '<input class="input" type="date" value="2026-11-01" style="max-width:180px">'
         + '<input class="input" type="date" value="2026-11-30" style="max-width:180px">'
@@ -254,11 +240,50 @@
         + '<button class="btn btn--secondary btn--sm" type="button">↓ Ekspor Excel</button></div>');
   } else {
     content = header('Halaman tidak tersedia', 'Kembali ke dashboard.')
-      + notice()
       + '<a class="btn btn--primary" href="dashboard.html">Ke dashboard</a>';
   }
 
   document.getElementById('pageContent').innerHTML = content;
+
+  /* Tombol aksi hanya Memberi notifikasi sukses, tanpa mengubah data. */
+  var toastTimer = null;
+
+  function showToast(message) {
+    var toast = document.getElementById('demoToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'demoToast';
+      toast.className = 'demo-toast';
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = '<div class="alert alert--success"><strong>Berhasil.</strong> '
+      + esc(message) + '</div>';
+    toast.classList.add('is-visible');
+    if (toastTimer) {
+      window.clearTimeout(toastTimer);
+    }
+    toastTimer = window.setTimeout(function () {
+      toast.classList.remove('is-visible');
+    }, 3200);
+  }
+
+  function successMessage(label) {
+    var text = label.toLowerCase();
+    if (text.indexOf('check-in') !== -1) return 'Check-in berhasil dicatat.';
+    if (text.indexOf('check-out') !== -1) return 'Check-out berhasil dicatat.';
+    if (text.indexOf('setujui') !== -1) return 'Pengajuan disetujui.';
+    if (text.indexOf('ekspor') !== -1) return 'Laporan siap diunduh (simulasi).';
+    if (text.indexOf('tampilkan') !== -1) return 'Filter berhasil diterapkan.';
+    if (text.indexOf('progres') !== -1) return 'Progres berhasil diperbarui.';
+    return 'Aksi berhasil dilakukan.';
+  }
+
+  var pageButtons = document.querySelectorAll('#pageContent button.btn');
+  Array.prototype.forEach.call(pageButtons, function (button) {
+    button.addEventListener('click', function () {
+      showToast(successMessage(button.textContent || 'Aksi'));
+    });
+  });
 
   /* Lo-Fi toggle. */
   var toggle = document.getElementById('lofiToggle');
